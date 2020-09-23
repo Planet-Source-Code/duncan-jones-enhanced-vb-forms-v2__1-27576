@@ -1,0 +1,182 @@
+<html><head>
+<TITLE>Downloads from Merrion Computing Ltd</TITLE>
+<META content="Visual Basic Downloads,Windows API,EventCtl, Form Control, SysTray" name=keywords>
+<META content="Using the Merrion Computing EventCtl Control in Visual Basic" name=description>
+<META content="(c) 2001 - Merrion Computing Ltd" name="COPYRIGHT">
+</head>
+<body>
+<table id=DefaultLayout height="100%" cellSpacing=3 cellPadding=2 width="100%" 
+border=0>
+  <tr vAlign=top align=middle>
+<!-- Leftmost column - navigation and copyright  -->
+    <td width=84 rowSpan=10>
+<!-- Main navigation bitmap  -->
+<IMG height=460 alt="Main navigation toolbar" src="../Images/nav_main.gif" width=84 >&nbsp; 
+<!-- Copyright Message -->
+     <p><font face=Arial size=1>(c) 2001 - Merrion Computing Ltd 
+      </font></P>
+<!-- Sponsor Link --><a 
+      href="http://www.dell.ie"><IMG alt="Designed on a Dell" src="../Images/dell_link.gif" ></a> </td>
+<!-- VBEventWindow column -->
+    <td id=VBEventWindow width="30%">
+      <p><font face=Arial><strong>VBEventWindow Control</strong></font></p>
+     <!-- Properties -->
+      <p><IMG alt="VBEventWindow Properties" src="../Images/properties.gif"></p>
+      <p align=left><font face=Arial size=1>&nbsp;ParentForm  [Write Only]</font></p>
+      <p align=Justify><font face=Arial size=1>Set this value to the <i>hWnd</i> of the form for which you want VBEventWindow to provide the extra events/properties</font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;MinTrackHeight,MaxTrackHeight [Read / Write]</font></p>
+      <p align=Justify><font face=Arial size=1>These parameters set the minimum and maximum height to which the user can drag-resize the form</font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;MinTrackWidth,MaxTrackWidth [Read / Write]</font></p>
+      <p align=Justify><font face=Arial size=1>These parameters set the minimum and maximum width to which the user can drag-resize the form</font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;MaxWidth, MaxHeight [Read / Write]</font></p>
+      <p align=Justify><font face=Arial size=1>These parameters set the height and width that the form will size to when the maximise button is pressed</font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;MaxPositionLeft, MaxPositionTop [Read / Write]</font></p>
+      <p align=Justify><font face=Arial size=1>These parameters set the left and top coordinates that the form will go to when the maximise button is pressed</font></p>
+
+     <!-- Methods -->
+      <p><IMG alt="VBEventWindow Methods" src="../Images/methods.gif"></p>
+      <p align=left><font face=Arial size=1>&nbsp;InvalidateRect(ByVal RectIn As APIRect)</font></p>
+      <p align=Justify><font face=Arial size=1>This method is used to mark part of a form as requiring redrawing.  It is faster than using Visual Basic's built in <i>Refresh</i> method</font></p>
+
+
+     <!-- Events -->
+      <p><IMG alt="VBEventWindow Events" src="../Images/events.gif"></p>
+      <p align=Justify><font face=Arial size=1><i>None of these events will fire unless the <b>ParentForm</b> property has been set to a valid window handle, such as Form1.hwnd</i></font></p>
+      <p align=left><font face=Arial size=1>&nbsp;WindowMessageFired(ByVal msg As WindowMessages, ByVal wParam As Long, ByVal lParam As Long, Cancel As Boolean, ProcRet As Long)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired whenever the subclassed window recieves any window message.  
+       The <b>msg</b> parameter tells you which message was recieved and the <b>wParam</b> and <b>lParam</b> values give you extra information about that value.  
+       If you are using the VBEventWindow control for subclassing then this is the most useful event.  Setting <b>Cancel</b> parameter to true will prevent the window message being passed on to the window for default processing.
+       Setting <b>ProcRet</b> forces the value to be returned to the system instead of the default return value.
+      </font></p>      
+      
+      <p align=left><font face=Arial size=1>&nbsp;ActiveApplicationChanged(ByVal ActivatingThisApp As Boolean, ByVal hThread As Long, Cancel As Boolean)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired for a top level form when the active application switches
+      to or from the application containing that form.  
+      </font></p>
+  
+      <p align=left><font face=Arial size=1>&nbsp;LostCapture(ByVal hwndNewCapture As Long, Cancel As Boolean)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired for a form when the capture moves to a new form.  
+      You can set <b>Cancel</b> to True to prevent this occuring.
+      </font></p>
+    
+      <p align=left><font face=Arial size=1>&nbsp;KeyPressed(ByVal VKey As Long, ByVal Repetition As Long, ByVal ScanCode As Long, ByVal ExtendedKey As Boolean, ByVal AltDown As Boolean, ByVal AlreadyDown As Boolean, ByVal BeingPressed As Boolean, Cancel As Boolean)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when <i>any</i> key is pressed whilst the form has input focus.  This event can trap those keys which
+      don't generate a standard form <i>KeyPress()</i> event, such as Print Screen etc.
+      </font></p>
+      
+      <p align=left><font face=Arial size=1>&nbsp;LowMemory(ByVal TimeSpentCompacting As Long)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired for any top level window when the operating system is 
+      running low on memory.  <b>TimeSpentCompacting</b> tells you just how much time windows is having to spend compacting
+      the memory to free some space.  You could respond to this message to inform the user that memory was low before it
+      impacted on your application's stability.
+      </font></p>
+      
+      <p align=left><font face=Arial size=1>&nbsp;Move(ByVal x As Long, ByVal y As Long, Cancel As Boolean)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the form is moved by the user.  
+         <b>x</b> and <b>y</b> parameters tell you where the form is being moved and you can set <b>Cancel</b> to true to prevent the move.
+      </font></p>
+      
+      <p align=left><font face=Arial size=1>&nbsp;VerticalScroll(ByVal Message As enScrollMessages, ByVal Position As Long, Cancel As Boolean)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the user clicks on a form's vertical scroll bar (if one is set).
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;HorizontalScroll(ByVal Message As enScrollMessages, ByVal Position As Long, Cancel As Boolean)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the user clicks on a form's horizontal scroll bar (if one is set).
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;WindowsSettingsChanged(ByVal NewSetting As enSystemParametersInfo)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the  windows settings are changed by the control panel.  You should respond to this event if the changes affect your application.
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;WindowsINIChanged(ByVal Section As String)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired for a top level window when the Windows .INI file is changed.  You should respond to this if the changes affect your application.
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;NonClientMouseMove(ByVal Location As enHitTestResult, ByVal x As Single, ByVal y As Single)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the mouse moves over part of your form that is not the client area, such as the title bar, menu bar, fram etc.
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;NonClientMouseDown(ByVal Location As enHitTestResult, ByVal Button As Integer, ByVal x As Single, ByVal y As Single)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired presses the mouse button down while the pointer is over part of your form that is not in the client area, such as the menu bar, title bar etc.
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;NonClientMouseUp(ByVal Location As enHitTestResult, ByVal Button As Integer, ByVal x As Single, ByVal y As Single)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the user releases the mouse button over part of your form that is not in the client area, such as the menu bar, title bar etc.
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;NonClientDblClick(ByVal Location As enHitTestResult, ByVal Button As Integer, ByVal x As Single, ByVal y As Single)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the user double-clicks part of your form that is not in the client area, such as the menu bar, title bar etc.
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;MinMaxSize(MaxHeight As Long, MaxWidth As Long, MaxPositionTop As Long, MaxPositionLeft As Long, MinTrackWidth As Long, MinTrackHeight As Long, MaxTrackWidth As Long, MaxTrackHeight As Long)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the system is determining the size to make your form when maximising it and to set the limits
+      beyond which the user cannot drag resize the form.
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;MouseOverMenu(ByVal Caption As String)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the mouse moves over one of your form's top level menus.  This can be used to give the user 
+      feedback as to what that menu is about in a status bar or similar.
+      </font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;ApiError(ByVal Number As Long, ByVal Source As String, ByVal Description As String)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired whenever an internal API error occurs during the operation of
+       the VBEventWindow's functions.  The source and description will give you aditional information as to the cause of the error.
+       Please report any unexpected/unexplained errors to <a href="mailto:Development@MerrionComputing.com">the Merrion Development team</a>
+      </font></p>
+    </td>
+<!-- SysTrayCtl column-->
+    <td id=SysTrayCtl width="30%">
+      <p><font face=Arial><strong>SysTrayCtl Control</strong></font></p>
+     <!-- Properties -->
+      <p><IMG alt="SysTrayCtl Properties" src="../Images/properties.gif"></p>
+      <p align=left><font face=Arial size=1>&nbsp;Tooltip [Read / Write]</font></p>
+      <p align=Justify><font face=Arial size=1>Sets/Returns the text that will be displayed as a tool tip when the user hovers over the icon in the system tray.</font></p>
+     <!-- Methods -->
+      <p><IMG alt="SysTrayCtl Methods" src="../Images/methods.gif"></p>
+      <p align=left><font face=Arial size=1>&nbsp;Hideicon()</font></p>
+      <p align=Justify><font face=Arial size=1>This removes the icon from the system tray</font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;ShowIcon()</font></p>
+      <p align=Justify><font face=Arial size=1>This puts the icon in the system tray</font></p>
+
+      <p align=left><font face=Arial size=1>&nbsp;Refresh()</font></p>
+      <p align=Justify><font face=Arial size=1>This repaints the icon in the system tray</font></p>
+
+     <!-- Events -->
+      <p><IMG alt="SysTrayCtl Events" src="../Images/events.gif"></p>
+      <p align=left><font face=Arial size=1>&nbsp;MouseMove()</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the mouse moves over your icon in the system tray</font></p>
+      <p align=left><font face=Arial size=1>&nbsp;MouseDown(ByVal Button As Integer)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the mouse moves button is pressed down over your icon in the system tray.</font></p>
+      <p align=left><font face=Arial size=1>&nbsp;MouseUp(ByVal Button As Integer)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the mouse moves button is released over your icon in the system tray.</font></p>
+      <p align=left><font face=Arial size=1>&nbsp;MouseDblClick(ByVal Button As Integer)</font></p>
+      <p align=Justify><font face=Arial size=1>This event is fired when the icon in the system trayis Double-clicked.</font></p>
+    </td>
+<!-- Contact -->
+    <td width="20%">
+<!-- Beta message-->
+     <p><font face=Arial><strong>This software is in Beta release</strong></font></p>
+     <p align=justify>
+     <font face=Arial size=1>Documentation is subject to change without notice as the software changes.  Please refer back here for the most recent changes. To be notified of updates you can <a href="http://www.merrioncomputing.com/simplemail.htm">subscribe to the newsletter.</a>
+      </font>
+     </p>
+      <p><font face=Arial><strong>About Merrion Computing</strong></font></p>
+      <p><IMG alt="Contacting Merrion Computing" src="../Images/contact.gif"></p>
+      <p align=justify><font face=Arial size=1><A href="mailto:Administrator@MerrionComputing.com">Email the 
+      administrator</A> with general enquiries related to Merrion 
+      Computing</font></p>
+      <p align=justify><font face=Arial size=1><A href="mailto:Development@MerrionComputing.com">Email the 
+      development team</A> with defect reports or other enquiries related to the 
+      source code and downloads on site</font></p>
+      <p align=justify><font face=Arial size=1><A href="mailto:Webmaster@MerrionComputing.com">Email the web 
+      developer</A> with any comments and suggestions for this site</font></p>
+      </td>
+      </tr>
+
+      </table>
+</body></html>
